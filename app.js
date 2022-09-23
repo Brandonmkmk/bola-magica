@@ -1,11 +1,18 @@
 const ask = () => {
     
     //Leer Pregunta
-    //Recibir respuesta al preguntar a bola mágina
-    let answer = magicball();
-    //Imprimir Resultado
+    const questionInput = document.getElementById('question');
+    
+    
     const answerInput = document.getElementById('answer');
-    answerInput.value = answer;
+    if (questionInput.value !== ""){
+        //Recibir respuesta al preguntar a bola mágica
+        let answer = magicBall();
+        //Imprimir Resultado
+        answerInput.value = answer;
+    } else {
+        answerInput.value = "Pregunta algo";
+    }
 };
 
 //Función Bola Mágica
@@ -38,4 +45,5 @@ const magicBall = () => {
         eightBall = 'Signs point to yes';
         break;
     }
+    return eightBall;
 };
